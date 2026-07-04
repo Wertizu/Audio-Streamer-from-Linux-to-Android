@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpotifyRecieverAPK.MainPage"
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+
+    <Grid>
+        
+        <ScrollView x:Name="Chat" VerticalOptions="FillAndExpand">
+
+            <VerticalStackLayout Spacing="30" Padding="20" VerticalOptions="Center" HorizontalOptions="Center">
+            
+             
+                <VerticalStackLayout Spacing="20">
+                    <Label x:Name="Label_1" 
+                           Text="Willkommen" 
+                           FontSize="26" 
+                           HorizontalOptions="Center"
+                           TextColor="#E0E0E0"/>
+
+                    <Label x:Name="Label_2" 
+                           Text="" 
+                           FontSize="20" 
+                           HorizontalOptions="Center"
+                           TextColor="#E0E0E0"/>
+
+                    <Button x:Name="Button_1" 
+                            Text="Verbinden" 
+                            FontSize="24" 
+                            HorizontalOptions="Fill" 
+                            Clicked="StartConnection"
+                            TextColor="#E0E0E0"
+                            BackgroundColor="#4A90E2"/>
+                
+                    <Entry x:Name="Entry_1"
+                           Placeholder="IP Addresse eingeben..."
+                           FontSize="24"
+                           Completed="IPChange"
+                           IsVisible="False"
+                           HorizontalOptions="Center"
+                           TextColor="#E0E0E0"/>
+                
+                
+
+
+                </VerticalStackLayout>
+            
+            
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <Button x:Name="Previous"
+                            ImageSource="previous.png"
+                            FontSize="20"
+                            Clicked="PREVIOUS"
+                            IsVisible="false"
+                            TextColor="#E0E0E0"
+                            BackgroundColor="#4A90E2"/>
+
+                    <Button x:Name="PlayPause"
+                            ImageSource="play.png"
+                            FontSize="20"
+                            Clicked="PLAYPAUSE"
+                            IsVisible="false"
+                            TextColor="#E0E0E0"
+                            BackgroundColor="#4A90E2"/>
+
+                    <Button x:Name="Next"
+                            ImageSource="next.png"
+                            FontSize="20"
+                            Clicked="NEXT" 
+                            IsVisible="false" 
+                            TextColor="#E0E0E0"
+                            BackgroundColor="#4A90E2"/>
+                </HorizontalStackLayout>
+
+                
+            </VerticalStackLayout>
+            
+        </ScrollView>
+        
+        <Button x:Name="Button_2" 
+        Text="IP ändern" 
+        FontSize="12" 
+        HorizontalOptions="End"
+        VerticalOptions="End"
+        Margin="1"
+        Clicked="NewIP"
+        IsVisible="True"
+        TextColor="#E0E0E0"
+        BackgroundColor="#4A90E2"/>
+    </Grid>
+</ContentPage>
