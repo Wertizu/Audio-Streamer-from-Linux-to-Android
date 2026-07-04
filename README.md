@@ -4,9 +4,9 @@ With this project, you can stream your entire system audio from a Linux OS (like
 
 Good to Know
 
-  Language: Some text and UI elements are currently written in German. Maybe I will change that to English soon.
-
   Ports: The Server uses the ports 5000, 5001, 5002, and 5003. Please ensure they are unused or change them in the code.
+
+  I  used the Help of Gemini
 
 How to Start the Server (Linux)
 
