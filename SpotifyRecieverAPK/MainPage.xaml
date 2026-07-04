@@ -15,7 +15,7 @@
              
                 <VerticalStackLayout Spacing="20">
                     <Label x:Name="Label_1" 
-                           Text="Willkommen" 
+                           Text="Welcome!" 
                            FontSize="26" 
                            HorizontalOptions="Center"
                            TextColor="#E0E0E0"/>
@@ -27,7 +27,7 @@
                            TextColor="#E0E0E0"/>
 
                     <Button x:Name="Button_1" 
-                            Text="Verbinden" 
+                            Text="Connect" 
                             FontSize="24" 
                             HorizontalOptions="Fill" 
                             Clicked="StartConnection"
@@ -35,7 +35,7 @@
                             BackgroundColor="#4A90E2"/>
                 
                     <Entry x:Name="Entry_1"
-                           Placeholder="IP Addresse eingeben..."
+                           Placeholder="Type in your IP"
                            FontSize="24"
                            Completed="IPChange"
                            IsVisible="False"
@@ -80,7 +80,7 @@
         </ScrollView>
         
         <Button x:Name="Button_2" 
-        Text="IP ändern" 
+        Text="Change IP" 
         FontSize="12" 
         HorizontalOptions="End"
         VerticalOptions="End"

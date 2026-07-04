@@ -8,7 +8,7 @@ namespace SpotifyRecieverAPK.Platforms.Android
     [Service(Enabled = true, Exported = false, ForegroundServiceType = global::Android.Content.PM.ForegroundService.TypeMediaPlayback)]
     public class MyForegroundService : Service
     {
-        // Hier nutzen wir jetzt die vollen Pfade, damit der Compiler sie garantiert findet
+        
         private global::Android.Net.Wifi.WifiManager.WifiLock wifiLock;
         private global::Android.OS.PowerManager.WakeLock wakeLock;
 
@@ -19,13 +19,13 @@ namespace SpotifyRecieverAPK.Platforms.Android
             var channelId = "dummy_channel";
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
-                var channel = new NotificationChannel(channelId, "Audio Dienst", NotificationImportance.High);
+                var channel = new NotificationChannel(channelId, "Audio Service", NotificationImportance.High);
                 ((NotificationManager)GetSystemService(NotificationService))?.CreateNotificationChannel(channel);
             }
 
             var notification = new NotificationCompat.Builder(this, channelId)
                 .SetContentTitle("Spotify Receiver")
-                .SetContentText("Streaming aktiv...")
+                .SetContentText("Streaming active...")
                 .SetSmallIcon(Microsoft.Maui.Resource.Id.icon)
                 .SetOngoing(true)
                 .Build();

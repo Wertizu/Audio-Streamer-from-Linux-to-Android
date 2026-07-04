@@ -54,7 +54,7 @@ class AudioRecorder
                 {
                     message = null;
                     connect = true;
-                    Console.WriteLine($"\nVerbindung von {IpClient.Address} akzeptiert!");
+                    Console.WriteLine($"\nConnection from {IpClient.Address} accepted!");
 
                     cts?.Dispose();
                     cts = new CancellationTokenSource();
@@ -85,7 +85,7 @@ class AudioRecorder
             {
                 using (BinaryReader reader = new BinaryReader(ffmpegProcess.StandardOutput.BaseStream))
                 {
-                    Console.WriteLine("\nAufnahme Gestartet!");
+                    Console.WriteLine("\nRecording has started!");
 
 
 
@@ -203,7 +203,7 @@ class AudioRecorder
             }
             catch(Exception ex)
             {
-                Console.WriteLine($"\nFehler {ex}");
+                Console.WriteLine($"\nException {ex}");
             }
         }  
     }

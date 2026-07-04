@@ -30,8 +30,8 @@ namespace SpotifyRecieverAPK
 
         private System.Net.IPEndPoint remoteEP = null;
         private UdpClient Client = new UdpClient();
-        
-        private IPAddress ServerIP = IPAddress.Parse("100.121.206.79");
+
+        private IPAddress ServerIP;
         private string ServerIPString;
         IPEndPoint serverAudioEP;
 
@@ -49,17 +49,17 @@ namespace SpotifyRecieverAPK
                     ServerIPString = ip;
                     _hasIP = true;
 
-                    Label_2.Text = $"IP lautet {ip}";
+                    Label_2.Text = $"Your IP is {ip}";
                 }
                 else
                 {
-                    Label_2.Text = "IP wurde nicht gefunden. Bitte eingeben.";
+                    Label_2.Text = "IP couldnt be Loaded. Pls enter a new one.";
                     Entry_1.IsVisible = true;
                 }
             }
             catch
             {
-                Label_1.Text = "Fehler beim Laden der IP. Bitte App neustarten.";
+                Label_1.Text = "Exception while Loading the IP. Pls restart the App.";
             }
         }
 
@@ -80,7 +80,7 @@ namespace SpotifyRecieverAPK
                     
                     MainThread.InvokeOnMainThreadAsync(() =>
                     {
-                        Label_2.Text = $"IP ist jetzt {ip}";
+                        Label_2.Text = $"IP is now {ip}";
                         Entry_1.IsVisible = false;
                     });
 
@@ -89,7 +89,7 @@ namespace SpotifyRecieverAPK
                 {
                     MainThread.InvokeOnMainThreadAsync(() =>
                     {
-                        Label_2.Text = $"Etwas beim speichern hat nicht geklappt!";
+                        Label_2.Text = $"Something went wrong while saving!";
                     });
                 }
             }
@@ -104,7 +104,7 @@ namespace SpotifyRecieverAPK
             MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Entry_1.IsVisible = true;
-                Label_2.Text = $"Bitte neue IP eingeben";
+                Label_2.Text = $"Pls enter you IP-address";
             });
         }
         private async void StartConnection(object sender, EventArgs e)
@@ -120,8 +120,8 @@ namespace SpotifyRecieverAPK
 #endif
 
                 Label_2.Text = "Disconnected";
-                Label_1.Text = "STARTSCREEN";
-                Button_1.Text = "Erneut verbinden";
+                Label_1.Text = "Welcome!";
+                Button_1.Text = "Reconnect";
                 PlayPause.ImageSource = "play.png";
                 PlayPause.IsVisible = false;
                 Next.IsVisible = false;
@@ -175,20 +175,20 @@ namespace SpotifyRecieverAPK
                 {
                     if(trys >= 6)
                     {
-                        Label_1.Text = $"Server ist schon in verwendung oder IP stimmt nicht.";
-                        Label_2.Text = $"Versuche später erneut. Sonst kontaktiere Support";
+                        Label_1.Text = $"Server is already in use or the IP is wrong.";
+                        Label_2.Text = $"Try again later.";
                     }
                     else
                     {
-                        Label_1.Text = $"Keine Antwort. Versuche erneut...";
+                        Label_1.Text = $"No answer. Trying again";
                         trys += 1;
                     }
                     
                 }
                 catch (Exception ex)
                 {
-                    Label_1.Text = $"Fehler Beim connecten! {ex}";
-                    Button_1.Text = "Nochmal  versuchen";
+                    Label_1.Text = $"Exception while connecting! {ex}";
+                    Button_1.Text = "Try again";
                 }
             }
 #if ANDROID
@@ -222,7 +222,7 @@ namespace SpotifyRecieverAPK
             catch (Exception ex)
             {
 
-                Label_1.Text = $"Audio-Init Fehler: {ex.Message}";
+                Label_1.Text = $"Audio-Init exception: {ex.Message}";
             }
 #endif
             Button_2.IsVisible = false;
@@ -307,8 +307,8 @@ namespace SpotifyRecieverAPK
                             Client.Send(ERROR, ERROR.Length, ServerIPString, 5002);
                             if (!connected) break;
                             MainThread.BeginInvokeOnMainThread(() => {
-                                Label_1.Text = "Fehler beim Decoden";
-                                Label_2.Text = $"Genauer Fehler: {ex}";
+                                Label_1.Text = "Exception while Decding";
+                                Label_2.Text = $"Exact mistake: {ex}";
                             });
                         }
                     }
@@ -316,7 +316,7 @@ namespace SpotifyRecieverAPK
                     {
                         if (!connected) break;
                         MainThread.BeginInvokeOnMainThread(() => {
-                            Label_1.Text = "Fehler beim höhren";
+                            Label_1.Text = "Exception while listening";
                         });
                     }
                 }
