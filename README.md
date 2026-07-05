@@ -6,6 +6,8 @@ Good to Know
 
   Ports: The Server uses the ports 5000, 5001, 5002, and 5003. Please ensure they are unused or change them in the code.
 
+  If not, you need to install ffmpeg on your Linux system.
+
   I  used the Help of Gemini
 
 How to Start the Server (Linux)
