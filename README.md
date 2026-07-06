@@ -20,13 +20,13 @@ How to Start the Server (Linux)
   - Start the server by running:
     "./SpotifyStreamer"
 
-  - Finished! The server should now be running and listening for connections.
+  - The server should now be running and listening for connections.
 
 How to Use the Client (Android APK)
 
   - When you first start the app, enter the IP address of your Linux system.
 
-  - You can change this IP at any time by clicking the button in the top right corner of the start screen.
+  - You can change this IP at any time by clicking the button in the bottom right corner of the start screen.
 
   - To start streaming, click the button labeled "Verbinden" (Connect). It will connect automatically.
 
