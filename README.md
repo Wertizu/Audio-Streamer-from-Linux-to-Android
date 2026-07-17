@@ -28,7 +28,7 @@ How to Use the Client (Android APK)
 
   - You can change this IP at any time by clicking the button in the bottom right corner of the start screen.
 
-  - To start streaming, click the button labeled "Verbinden" (Connect). It will connect automatically.
+  - To start streaming, click the button labeled "Connect". It will connect automatically.
 
   - Once connected, you can stop the stream by clicking "Disconnect".
 
